@@ -31,9 +31,9 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="pl.revolshen.app.HomeFragment"
+        android:name="pl.revolshen.app.MainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="pl.revolshen.app.OnBoardingFragment"
