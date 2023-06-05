@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ChildAdapter(private val childList: List<ChildItem>) :
     RecyclerView.Adapter<ChildAdapter.ChildViewHolder>() {
-inner class ChildViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    val imageView: ImageView = itemView.findViewById(R.id.childLogoIv)
-    val title: TextView = itemView.findViewById(R.id.childTitleTv)
-}
+
+    inner class ChildViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.childLogoIv)
+        val title: TextView = itemView.findViewById(R.id.childTitleTv)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.child_item, parent, false)
@@ -28,3 +29,4 @@ inner class ChildViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         return childList.size
     }
 }
+

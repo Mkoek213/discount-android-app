@@ -6,9 +6,9 @@ data class ParentItem(
 )
 
 data class ParentContent(
-    val image : Int,
+    val image : Int ,
     val title : String,
     val childItemList : List<ChildItem>,
     var isOpen : Boolean = false
 )
-data class ChildItem(val title : String, val image : Int)
+data class ChildItem(val title : String , val image : Int)
