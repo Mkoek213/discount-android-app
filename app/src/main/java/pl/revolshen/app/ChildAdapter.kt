@@ -29,4 +29,3 @@ class ChildAdapter(private val childList: List<ChildItem>) :
         return childList.size
     }
 }
-
