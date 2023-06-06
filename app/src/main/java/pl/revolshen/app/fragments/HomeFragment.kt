@@ -12,13 +12,6 @@ import pl.revolshen.app.ParentContent
 import pl.revolshen.app.ParentItem
 import pl.revolshen.app.R
 import pl.revolshen.app.databinding.FragmentHomeBinding
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
-import pl.revolshen.app.networking.Restaurant
-import pl.revolshen.app.networking.RestaurantApiService
-import pl.revolshen.app.networking.RetrofitClient
-import javax.security.auth.callback.Callback
 
 
 class HomeFragment : Fragment() {
@@ -54,48 +47,12 @@ class HomeFragment : Fragment() {
 
     private fun prepareData() {
         val parentItemList = mutableListOf<ParentItem>()
-        val apiService = RetrofitClient.createRestaurantApiService()
-
-        val restaurantByFoodTypeCall = apiService.getRestaurantsByFoodType("Pizza")
 
 
         val childItems1 = mutableListOf<ChildItem>()
-
-        val restaurantApiService = RetrofitClient.createRestaurantApiService()
-
-        restaurantApiService.getRestaurantsByFoodType("Pizza").enqueue(object : retrofit2.Callback<List<Restaurant>> {
-            override fun onResponse(call: retrofit2.Call<List<Restaurant>>, response: retrofit2.Response<List<Restaurant>>) {
-                if (response.isSuccessful) {
-                    val restaurants = response.body()
-
-                    if (restaurants != null) {
-                        // Clear the existing childItems1 list
-                        childItems1.clear()
-
-                        // Iterate over the restaurants and add corresponding ChildItems to the childItems1 list
-                        restaurants.forEach { restaurant ->
-                            childItems1.add(ChildItem(restaurant.name, R.drawable.spaghetti))
-                        }
-
-                        // Notify any adapter or UI component about the change in the data
-                        // For example, if you're using RecyclerView, you can call notifyDataSetChanged()
-                    } else {
-                        // Log absence of data
-                        Log.d("API Response", "Empty restaurant list")
-                    }
-                } else {
-                    // Log API error
-                    Log.d("API Response", "Error: ${response.code()}")
-                }
-            }
-
-            override fun onFailure(call: retrofit2.Call<List<Restaurant>>, t: Throwable) {
-                // Log network or request failure
-                Log.e("API Response", "Request failed: ${t.message}")
-            }
-        })
-
-
+        childItems1.add(ChildItem("ABCD", R.drawable.kebab))
+        childItems1.add(ChildItem("EFGH", R.drawable.kebab))
+        childItems1.add(ChildItem("KLMN", R.drawable.kebab))
         val parentContent1 = ParentContent(R.drawable.pizza, "Pizza", childItems1)
 
         val childItems2 = mutableListOf<ChildItem>()
