@@ -12,6 +12,11 @@ import pl.revolshen.app.ParentContent
 import pl.revolshen.app.ParentItem
 import pl.revolshen.app.R
 import pl.revolshen.app.databinding.FragmentHomeBinding
+import okhttp3.*
+
+import org.json.JSONObject
+
+import java.io.IOException
 
 
 class HomeFragment : Fragment() {
@@ -47,13 +52,47 @@ class HomeFragment : Fragment() {
 
     private fun prepareData() {
         val parentItemList = mutableListOf<ParentItem>()
-
-
         val childItems1 = mutableListOf<ChildItem>()
-        childItems1.add(ChildItem("ABCD", R.drawable.kebab))
-        childItems1.add(ChildItem("EFGH", R.drawable.kebab))
-        childItems1.add(ChildItem("KLMN", R.drawable.kebab))
-        val parentContent1 = ParentContent(R.drawable.pizza, "Pizza", childItems1)
+
+        // Make the HTTP request to fetch the characters
+        val request = Request.Builder()
+            .url("https://rickandmortyapi.com/api/character/")
+            .build()
+        val client = OkHttpClient()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                // Handle request failure
+                e.printStackTrace()
+
+                Log.e("API Connection", "Failed to connect to the API.")
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val responseData = response.body?.string()
+
+                if (response.isSuccessful && responseData != null) {
+                    // Parse the JSON response
+                    val characters = JSONObject(responseData)
+                    val results = characters.getJSONArray("results")
+
+                    for (i in 0 until results.length()) {
+                        val character = results.getJSONObject(i)
+                        val id = character.getInt("id")
+                        val name = character.getString("name")
+
+                        // Add character names to childItems1
+                        childItems1.add(ChildItem(name, R.drawable.kebab))
+                    }
+
+                    // Update the RecyclerView adapter here if needed
+                }
+            }
+        })
+
+
+
+    val parentContent1 = ParentContent(R.drawable.pizza, "Pizza", childItems1)
 
         val childItems2 = mutableListOf<ChildItem>()
         childItems2.add(ChildItem("Kotlin", R.drawable.kebab))
