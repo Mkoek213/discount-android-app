@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class ChildAdapter(private val childList: List<ChildItem>) :
     RecyclerView.Adapter<ChildAdapter.ChildViewHolder>() {
@@ -13,6 +14,9 @@ class ChildAdapter(private val childList: List<ChildItem>) :
     inner class ChildViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.childLogoIv)
         val title: TextView = itemView.findViewById(R.id.childTitleTv)
+        val adress: TextView = itemView.findViewById(R.id.adressTv)
+        val discount: TextView = itemView.findViewById(R.id.discountTv)
+        val time: TextView = itemView.findViewById(R.id.timeTv)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildViewHolder {
@@ -21,9 +25,14 @@ class ChildAdapter(private val childList: List<ChildItem>) :
     }
 
     override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
-        holder.imageView.setImageResource(childList[position].image)
-        holder.title.text = childList[position].title
+        val childItem = childList[position]
+        Picasso.get().load(childItem.imageUrl).into(holder.imageView)
+        holder.title.text = childItem.title
+        holder.adress.text = childItem.address
+        holder.discount.text = childItem.discount
+        holder.time.text = childItem.time
     }
+
 
     override fun getItemCount(): Int {
         return childList.size
