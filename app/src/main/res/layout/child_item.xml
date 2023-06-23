@@ -33,12 +33,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/childLogoIv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/adressTv"
+        app:layout_constraintBottom_toTopOf="@+id/addressButton"
         app:layout_constraintHorizontal_bias="0"
         android:layout_marginLeft="15dp"/>
 
-    <TextView
-        android:id="@+id/adressTv"
+    <Button
+        android:id="@+id/addressButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="14sp"
@@ -57,8 +57,8 @@
         android:text="Rodzaj zniżki"
         app:layout_constraintBottom_toTopOf="@+id/timeTv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/adressTv"
-        app:layout_constraintTop_toBottomOf="@+id/adressTv"
+        app:layout_constraintStart_toStartOf="@+id/addressButton"
+        app:layout_constraintTop_toBottomOf="@+id/addressButton"
         />
 
     <TextView

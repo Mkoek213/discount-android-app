@@ -13,4 +13,4 @@ data class ParentContent(
     val childItemList : List<ChildItem>,
     var isOpen : Boolean = false
 )
-data class ChildItem(val title: String, val imageUrl: String, val discount: String, val address: String, val time: String)
+data class ChildItem(val title: String, val imageUrl: String, val address: String,val discount: String, val time: String)
