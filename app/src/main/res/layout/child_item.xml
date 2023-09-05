@@ -42,8 +42,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="14sp"
+        app:cornerRadius = "0dp"
         android:text="Adres restauracji"
-
+        android:backgroundTint="#2BB05D"
         app:layout_constraintBottom_toTopOf="@+id/discountTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/childTitleTv"

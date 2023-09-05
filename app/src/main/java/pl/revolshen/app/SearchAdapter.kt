@@ -10,11 +10,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-class ChildAdapter(private var childList: List<ChildItem>) :
-    RecyclerView.Adapter<ChildAdapter.ChildViewHolder>() {
 
-    // ViewHolder for ChildItem
-    inner class ChildViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class SearchAdapter(private var searchItems: MutableList<SearchItem>)
+    : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
+
+    inner class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.childLogoIv)
         val name: TextView = itemView.findViewById(R.id.childTitleTv)
         val addressButton: Button = itemView.findViewById(R.id.addressButton)
@@ -22,33 +22,36 @@ class ChildAdapter(private var childList: List<ChildItem>) :
         val time: TextView = itemView.findViewById(R.id.timeTv)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.child_item, parent, false)
-        return ChildViewHolder(view)
+        return SearchViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
-        val childItem = childList[position]
-        Picasso.get().load(childItem.imageUrl).into(holder.imageView)
-        holder.name.text = childItem.name
+    override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
+        val searchItem = searchItems[position]
+        Picasso.get().load(searchItem.imageUrl).into(holder.imageView)
+        holder.name.text = searchItem.name
         holder.addressButton.text = "Pokaż na mapie"
-        holder.discount.text = childItem.discount
-        holder.time.text = childItem.time
+        holder.discount.text = searchItem.discount
+        holder.time.text = searchItem.time
 
         holder.addressButton.setOnClickListener {
-            val address = childItem.address
+            val address = searchItem.address
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$address"))
             holder.itemView.context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int {
-        return childList.size
+        return searchItems.size
     }
 
-    fun setItems(newItems: List<ChildItem>) {
-        childList = newItems
+    fun setItems(newItems: List<SearchItem>) {
+        searchItems.clear()
+        searchItems.addAll(newItems)
+        notifyDataSetChanged()
     }
 
 }
+
 

@@ -6,5 +6,6 @@ data class Restaurant(
     val discount: String,
     val time: String,
     val foodtype: String,
-    val url: String
+    val url: String,
+    val language: String
 )
