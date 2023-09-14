@@ -14,8 +14,8 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import pl.mikolaj.app.LanguageChangeListener
-import pl.mikolaj.app.R
-import pl.mikolaj.app.databinding.FragmentSettingsBinding
+import pl.revolshen.app.R
+import pl.revolshen.app.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
     private var languageChangeListener: LanguageChangeListener? = null

@@ -18,8 +18,6 @@ import pl.mikolaj.app.ChildItem
 import pl.mikolaj.app.ParentAdapter
 import pl.mikolaj.app.ParentContent
 import pl.mikolaj.app.ParentItem
-import pl.mikolaj.app.R
-import pl.mikolaj.app.databinding.FragmentHomeBinding
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -28,6 +26,8 @@ import pl.mikolaj.app.LanguageChangeListener
 import pl.mikolaj.app.SearchAdapter
 import pl.mikolaj.app.SearchItem
 import pl.mikolaj.app.networking.NoInternetActivity
+import pl.revolshen.app.R
+import pl.revolshen.app.databinding.FragmentHomeBinding
 
 import java.io.IOException
 import java.util.Locale

@@ -2,7 +2,7 @@ package pl.mikolaj.app.networking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import pl.mikolaj.app.R
+import pl.revolshen.app.R
 
 class NoInternetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

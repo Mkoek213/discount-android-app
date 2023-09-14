@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import pl.revolshen.app.R
 
 class SplashFragment : Fragment() {
 

@@ -16,6 +16,7 @@ import pl.mikolaj.app.fragments.AboutFragment
 import pl.mikolaj.app.fragments.HomeFragment
 import pl.mikolaj.app.fragments.SettingsFragment
 import pl.mikolaj.app.fragments.ShareFragment
+import pl.revolshen.app.R
 
 class MainFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout

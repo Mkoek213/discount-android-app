@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
-import pl.mikolaj.app.R
+import pl.revolshen.app.R
 
 class ThirdScreen : Fragment() {
 

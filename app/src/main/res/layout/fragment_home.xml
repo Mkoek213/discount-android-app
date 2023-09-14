@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     style="@style/ScreenBackground"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    tools:context="pl.mikolaj.app.fragments.HomeFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"

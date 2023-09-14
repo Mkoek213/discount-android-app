@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import pl.mikolaj.app.databinding.ParentItemBinding
+import pl.revolshen.app.R
+import pl.revolshen.app.databinding.ParentItemBinding
 
 class ParentAdapter(private val parentItemList: List<ParentItem>) :
     RecyclerView.Adapter<ParentAdapter.ParentViewHolder>() {

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
-import pl.mikolaj.app.R
+import pl.revolshen.app.R
 
 class SecondScreen : Fragment() {
 

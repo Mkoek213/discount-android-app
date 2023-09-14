@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import pl.mikolaj.app.fragments.HomeFragment
 import pl.mikolaj.app.fragments.SettingsFragment
+import pl.revolshen.app.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

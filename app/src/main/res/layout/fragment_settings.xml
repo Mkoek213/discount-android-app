@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     style="@style/ScreenBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.SettingsFragment">
+    tools:context="pl.mikolaj.app.fragments.SettingsFragment">
 
     <TextView
         android:id="@+id/titleTextView"

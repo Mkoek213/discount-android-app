@@ -10,6 +10,7 @@ import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import pl.mikolaj.app.screens.FirstScreen
 import pl.mikolaj.app.screens.SecondScreen
 import pl.mikolaj.app.screens.ThirdScreen
+import pl.revolshen.app.R
 
 class OnBoardingFragment : Fragment() {
 
