@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="pl.revolshen.app.SplashFragment"
+        android:name="pl.mikolaj.app.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="pl.revolshen.app.MainFragment"
+        android:name="pl.mikolaj.app.MainFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="pl.revolshen.app.OnBoardingFragment"
+        android:name="pl.mikolaj.app.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action
